@@ -191,3 +191,12 @@ def test_full_workflow():
     # Verify deletion
     final_resp = client.get(f"/tasks/{task_id}")
     assert final_resp.status_code == 404
+
+# Failing this test on purpose
+def test_update_task_not_found_fail():
+    """Test updating a task that doesn't exist"""
+    response = client.put("/tasks/999", json={
+        "title": "Test",
+        "description": "Test"
+    })
+    assert response.status_code == 200
