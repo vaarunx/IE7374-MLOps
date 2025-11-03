@@ -27,4 +27,4 @@ jobs:
       run: |
         cd Labs/Github
         export PYTHONPATH="${PYTHONPATH}:./src"
-        pytest test/test_main.py -v
+        pytest tests/test_main.py -v
